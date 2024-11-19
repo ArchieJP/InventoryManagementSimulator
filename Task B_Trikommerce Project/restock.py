@@ -7,4 +7,9 @@ def restock_inventory(available_items, current_day):
     :param current_day: Current day of the simulation
     :return: Restocked units and updated available items
     """
-    
+    if current_day % 7 == 0:  # Restocking happens every 7th day
+        restocked_units = 2000 - available_items
+        available_items = 2000
+    else:
+        restocked_units = 0
+    return restocked_units, available_items
